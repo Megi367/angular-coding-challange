@@ -1,0 +1,17 @@
+<!-- <p>product-list works!</p> -->
+
+<h1>Products List</h1>
+<table class="table" style="width:100%">
+    <tr class="tr">
+        <th class="th">id</th>
+        <th class="th">name</th>
+        <th class="th">color</th>
+        <th class="th">size</th>
+    </tr>
+    <tr *ngFor="let product of products!">
+        <td class="td">{{product.id}}</td>
+        <td class="td">{{product.name}}</td>
+        <td class="td">{{product.color}}</td>
+        <td class="td">{{product.size}}</td>
+    </tr>
+</table>
