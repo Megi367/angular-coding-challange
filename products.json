@@ -1,50 +1,66 @@
-{"products": [
+{
+  "products": [
     {
-        "id": 1,
-        "name": "Bike 1",
-        "color": "White",
-        "size": "Small"
+      "id": 1,
+      "name": "Bike 1",
+      "color": "White",
+      "size": "Small"
     },
     {
-        "id": 2,
-        "name": "Bike 2",
-        "color": "Black",
-        "size": "Medium"
+      "id": 2,
+      "name": "Bike 2",
+      "color": "Black",
+      "size": "Medium"
     },
     {
-        "id": 3,
-        "name": "Bike 3",
-        "color": "Red",
-        "size": "Large"
+      "id": 3,
+      "name": "Bike 3",
+      "color": "Red",
+      "size": "Large"
     },
     {
-        "id": 4,
-        "name": "Bike 4",
-        "color": "Purple",
-        "size": "Small"
+      "id": 4,
+      "name": "Bike 4",
+      "color": "Purple",
+      "size": "Small"
     },
     {
-        "id": 5,
-        "name": "Bike 5",
-        "color": "Blue",
-        "size": "Large"
+      "id": 5,
+      "name": "Bike 5",
+      "color": "Blue",
+      "size": "Large"
     },
     {
-        "id": 6,
-        "name": "Bike 6",
-        "color": "Green",
-        "size": "X-Large"
+      "id": 6,
+      "name": "Bike 6",
+      "color": "Green",
+      "size": "X-Large"
     },
     {
-        "id": 7,
-        "name": "Bike 7",
-        "color": "White",
-        "size": "Medium"
+      "id": 7,
+      "name": "Bike 7",
+      "color": "White",
+      "size": "Medium"
     },
     {
-        "id": 8,
-        "name": "Bike 8",
-        "color": "Yellow",
-        "size": "Small"
+      "id": 8,
+      "name": "Bike 8",
+      "color": "Yellow",
+      "size": "Small"
     }
-]}
+  ],
+  "signup": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@admin",
+      "password": "admin"
+    },
+    {
+      "username": "megi",
+      "email": "kukamegi@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ]
+}
