@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { ApiService } from 'src/app/shared/api.service'
 import { Product } from 'src/app/models/Product';
 
 @Component({
@@ -13,13 +12,16 @@ export class ProductListComponent  {
   products: Product[];
   title = 'angular-crud-mock-api'
 
-  constructor(private http: HttpClient) {
+  constructor(private api: ApiService) {
     this.products = [];
-    this.getProducts();
    }
 
-   getProducts(){
-     this.http.get('http://localhost:3000/products')
+   ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+   getAllProducts(){
+     this.api.getProducts()
      .subscribe(res => this.products = res as Product[]);
    }
 }

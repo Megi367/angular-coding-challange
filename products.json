@@ -4,49 +4,65 @@
       "id": 1,
       "name": "Bike 1",
       "color": "White",
-      "size": "Small"
+      "size": "Small",
+      "status": "On Hold",
+      "conditions": "used"
     },
     {
       "id": 2,
       "name": "Bike 2",
       "color": "Black",
-      "size": "Medium"
+      "size": "Medium",
+      "status": "Sale",
+      "conditions": "new"
     },
     {
       "id": 3,
       "name": "Bike 3",
       "color": "Red",
-      "size": "Large"
+      "size": "Large",
+      "status": "Sale",
+      "conditions": "Used"
     },
     {
       "id": 4,
       "name": "Bike 4",
       "color": "Purple",
-      "size": "Small"
+      "size": "Small",
+      "status": "Rent",
+      "conditions": "new"
     },
     {
       "id": 5,
       "name": "Bike 5",
       "color": "Blue",
-      "size": "Large"
+      "size": "Large",
+      "status": "Rent",
+      "conditions": "used"
     },
     {
       "id": 6,
       "name": "Bike 6",
       "color": "Green",
-      "size": "X-Large"
+      "size": "X-Large",
+      "status": "Sale",
+      "conditions": "new"
     },
     {
       "id": 7,
       "name": "Bike 7",
       "color": "White",
-      "size": "Medium"
+      "size": "Medium",
+      "status": "On Hold",
+      "conditions": "used"
     },
     {
       "id": 8,
       "name": "Bike 8",
       "color": "Yellow",
-      "size": "Small"
+      "size": "Small",
+      "status": "On Hold",
+      "conditions": "new"
     }
   ],
   "signup": [

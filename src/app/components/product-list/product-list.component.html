@@ -1,10 +1,19 @@
+<nav class="navbar fixed-top navbar-light bg-dark">
+  <a class="navbar-brand" routerLink="/products" >The Bicycle Shop</a>
+  <div>
+  <button  type="button"  class="btn btn-light" style="margin-right: 20px;"><a routerLink="/detail">Detail List</a></button>
+  <button  type="button" class="btn btn-light"style="margin-right: 20px;"><a routerLink="/profile">Profile</a></button>
+  <button  type="button" class="btn btn-light" style="margin-right: 5px;"><a routerLink="/signin">Sign Out</a></button>
+  </div>
+</nav>
 <div class="container">
-<h1>Products List</h1>
-<table class="table" style="width:50%">
+<table class="table">
     <thead class="thead-dark" >
       <tr>
         <th scope="col">ID</th>
         <th scope="col">NAME</th>
+        <th scope="col">COLOR</th>
+        <th scope="col">STATUS</th>
       </tr>
     </thead>
 
@@ -12,6 +21,8 @@
         <tr *ngFor="let product of products!" scope="row">
         <td class="td">{{product.id}}</td>
         <td class="td">{{product.name}}</td>
+        <td class="td">{{product.color}}</td>
+        <td class="td">{{product.status}}</td>
         </tr>
     </tbody>
   </table>

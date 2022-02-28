@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductListComponent,
     SignInComponent,
     SignUpComponent,
+    ProductDetailComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
