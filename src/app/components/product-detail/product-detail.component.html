@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-light bg-dark">
     <a class="navbar-brand" routerLink="/products" >The Bicycle Shop</a>
     <div>
-    <button  type="button" class="btn btn-light" style="margin-right: 20px;" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+    <button  type="button" class="btn btn-light" style="margin-right: 20px;" (click)="open(content)">Add Product</button>
     <button  type="button" class="btn btn-light" style="margin-right: 20px;"><a routerLink="/profile">Profile</a></button>
     <button  type="button" class="btn btn-light" style="margin-right: 5px;"><a routerLink="/signin">Sign Out</a></button>
     </div>
@@ -27,7 +27,7 @@
           <td class="td">{{product.color}}</td>
           <td class="td">{{product.size}}</td>
           <td class="td">{{product.status}}</td>
-          <td class="td">{{product.status}}</td>
+          <td class="td">{{product.conditions}}</td>
           <td><button  type="button" class="btn btn-light" style="margin-right: 5px;">Edit</button>
               <button  type="button" class="btn btn-light" style="margin-right: 5px;" (click)="deleteProduct(product)">Delete</button>
           </td>
@@ -39,39 +39,43 @@
 
   <!-- Add Product Form -->  
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+    <ng-template #content let-modal>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-basic-title">Product Details</h2>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"><span aria-hidden="true">&times;</span></button>
+     </div>
+    <div class="modal-body">
+      <form [formGroup]="addProductForm">
+        <div class="mb-3">
+          <label for="productName">Product Name</label>
+          <div class="input-group">
+            <input type="text" formControlName="name" id="productName" class="form-control" placeholder="Name">
+          </div>
 
+          <label for="productColor">Product Color</label>
+          <div class="input-group">
+            <input type="text" formControlName="color" id="productColor" class="form-control" placeholder="Color">
+          </div>
+
+          <label for="productSize">Product Size</label>
+          <div class="input-group">
+            <input type="text" formControlName="size" id="productSize" class="form-control" placeholder="Size">
+          </div>
+
+          <label for="productStatus">Product Status</label>
+          <div class="input-group">
+            <input type="text" formControlName="status" id="productStatus" class="form-control" placeholder="Status">
+          </div>
+
+          <label for="productConditions">Product Conditions</label>
+          <div class="input-group">
+            <input type="text" formControlName="conditions" id="productConditions" class="form-control" placeholder="Conditions">
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+      </form>
     </div>
-  </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close(closeForm())">Close</button>
+        <button type="button" class="btn btn-info" (click)="modal.close(postProductDetails())">Add</button>
+    </div>
+  </ng-template>

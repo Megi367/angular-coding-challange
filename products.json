@@ -63,6 +63,14 @@
       "size": "Small",
       "status": "On Hold",
       "conditions": "new"
+    },
+    {
+      "id": 9,
+      "name": "Bike 9",
+      "color": "Neon Green",
+      "size": "X-Large",
+      "status": "Sale",
+      "conditions": "New"
     }
   ],
   "signup": [
