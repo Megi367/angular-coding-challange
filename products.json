@@ -6,7 +6,7 @@
       "color": "White",
       "size": "Small",
       "status": "On Hold",
-      "conditions": "used"
+      "conditions": "New"
     },
     {
       "id": 2,
@@ -67,7 +67,7 @@
     {
       "id": 9,
       "name": "Bike 9",
-      "color": "Neon Green",
+      "color": "Neon Pink",
       "size": "X-Large",
       "status": "Sale",
       "conditions": "New"

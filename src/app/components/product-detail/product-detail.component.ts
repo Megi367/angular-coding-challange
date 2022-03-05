@@ -18,6 +18,10 @@ export class ProductDetailComponent implements OnInit {
   addProductForm!: FormGroup;
   productModelObject: ProductModel = new ProductModel();
 
+  // Show and hide Add Products or Update Products buttons
+  showADD!: boolean;
+  showUpdate!: boolean;
+
   constructor( private api: ApiService,
                private modalService: NgbModal,
                private formBuilder: FormBuilder) {
@@ -69,9 +73,47 @@ export class ProductDetailComponent implements OnInit {
     })
   }
 
+  onEdit(product: any, content:any){
+    this.showADD = false;
+    this.showUpdate = true;
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+
+    this.productModelObject.id = product.id;
+    this.addProductForm.controls['name'].setValue(product.name);
+    this.addProductForm.controls['color'].setValue(product.color);
+    this.addProductForm.controls['size'].setValue(product.size);
+    this.addProductForm.controls['status'].setValue(product.status);
+    this.addProductForm.controls['conditions'].setValue(product.conditions);
+  }
+
+  updateProductDetails(){
+    this.productModelObject.name = this.addProductForm.value.name;
+    this.productModelObject.color = this.addProductForm.value.color;
+    this.productModelObject.size = this.addProductForm.value.size;
+    this.productModelObject.status = this.addProductForm.value.status;
+    this.productModelObject.conditions = this.addProductForm.value.conditions;
+
+    this.api.updateProduct(this.productModelObject, this.productModelObject.id)
+    .subscribe(res=>{
+      alert("Product Updated Successfully!");
+      this.addProductForm.reset();
+      this.getAllProducts();
+    },err=>{
+      alert("Something Went Wrong!");
+    }
+    )
+  }
+
 
   // open modal for Adding Products Logic
   open(content: any) {
+    this.showADD = true;
+    this.showUpdate = false;
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
