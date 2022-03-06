@@ -71,6 +71,30 @@
       "size": "X-Large",
       "status": "Sale",
       "conditions": "New"
+    },
+    {
+      "id": 10,
+      "name": "Bike 10",
+      "color": "Red",
+      "size": "Small",
+      "status": "On Hold",
+      "conditions": "New"
+    },
+    {
+      "id": 11,
+      "name": "Bike 12",
+      "color": "Yellow",
+      "size": "Large",
+      "status": "Sale",
+      "conditions": "Used"
+    },
+    {
+      "id": 12,
+      "name": "Bike36",
+      "color": "Pink",
+      "size": "X-Large",
+      "status": "Sale",
+      "conditions": "New"
     }
   ],
   "signup": [
@@ -81,10 +105,16 @@
       "password": "admin"
     },
     {
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "user",
+      "id": 2
+    },
+    {
       "username": "megi",
       "email": "kukamegi@gmail.com",
       "password": "123456",
-      "id": 2
+      "id": 3
     }
   ]
 }

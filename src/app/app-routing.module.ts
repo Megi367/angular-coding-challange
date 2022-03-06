@@ -5,6 +5,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AuthGuard } from './shared/auth.guard';
+import { RoleGuard } from './shared/role.guard';
 
 
 const routes: Routes = [
@@ -23,15 +25,18 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: ProductListComponent
+    component: ProductListComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'detail',
-    component: ProductDetailComponent
+    component: ProductDetailComponent,
+    canActivate : [RoleGuard]
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate : [AuthGuard]
   },
 ];
 
