@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleGuard implements CanActivate {
+  constructor(private auth: AuthService,
+    private router: Router){
+}
   canActivate() {
     let Role = localStorage.getItem("userType");
-    if(Role == "Admin"){
+    if(this.auth.isSignedIn()&& Role == "Admin"){
       return true;
     } 
-    alert("You don't have Admin permission!")
+    this.router.navigate(['signin']);
+    alert("You need to Sign In or you don't have Admin permission!")
     return false;
   }
   
