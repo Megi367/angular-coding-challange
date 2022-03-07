@@ -13,6 +13,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({}, {}),
-    NgbModule
+    NgbModule,
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

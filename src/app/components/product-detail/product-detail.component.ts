@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
-import { map } from 'rxjs/operators'
 import { ApiService } from 'src/app/shared/api.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {FormGroup, FormBuilder} from '@angular/forms'
@@ -13,6 +12,7 @@ import { ProductModel } from './product-detail.model';
 })
 export class ProductDetailComponent implements OnInit {
 
+  searchText: any = '';
   products: Product[];
   closeResult = '';
   addProductForm!: FormGroup;

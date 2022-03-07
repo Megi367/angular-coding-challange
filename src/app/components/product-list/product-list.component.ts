@@ -9,6 +9,7 @@ import { Product } from 'src/app/models/Product';
 })
 export class ProductListComponent  {
 
+  searchText: any = '';
   products: Product[];
   title = 'angular-crud-mock-api'
 

@@ -7,6 +7,13 @@
   </div>
 </nav>
 <div class="container">
+<!-- Search Filter -->
+  <div class="column mb-1">
+    <div class="search-product">
+      <input type="text" name="search"  [(ngModel)]="searchText" placeholder="Search Filter">
+    </div>
+  </div>
+
 <table class="table">
     <thead class="thead-dark" >
       <tr>
@@ -18,7 +25,7 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let product of products!" scope="row">
+        <tr *ngFor="let product of products | filter:searchText "scope="row">
         <td class="td">{{product.id}}</td>
         <td class="td">{{product.name}}</td>
         <td class="td">{{product.color}}</td>
