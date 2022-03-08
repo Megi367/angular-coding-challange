@@ -17,14 +17,6 @@
       "conditions": "new"
     },
     {
-      "id": 3,
-      "name": "Bike 3",
-      "color": "Red",
-      "size": "Large",
-      "status": "Sale",
-      "conditions": "Used"
-    },
-    {
       "id": 4,
       "name": "Bike 4",
       "color": "Purple",
@@ -111,10 +103,10 @@
       "id": 2
     },
     {
-      "username": "megi",
-      "email": "kukamegi@gmail.com",
-      "password": "123456",
-      "id": 3
+      "username": "3iSolutions",
+      "email": "3iSolutions@gmail.com",
+      "password": "123",
+      "id": 4
     }
   ]
 }

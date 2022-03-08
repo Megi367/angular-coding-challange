@@ -11,7 +11,6 @@ export class ProductListComponent  {
 
   searchText: any = '';
   products: Product[];
-  title = 'angular-crud-mock-api'
 
   constructor(private api: ApiService) {
     this.products = [];

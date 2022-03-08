@@ -82,7 +82,7 @@
       </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="modal.close(closeForm())">Close</button>
+        <button type="button" class="btn btn-danger" (click)="modal.close()">Close</button>
         <button type="button" *ngIf="showADD" class="btn btn-info" (click)="modal.close(postProductDetails())">Add</button>
         <button type="button" *ngIf="showUpdate" class="btn btn-info" (click)="modal.close(updateProductDetails())">Update</button>
     </div>

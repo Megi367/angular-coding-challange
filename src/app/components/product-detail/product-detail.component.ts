@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { ApiService } from 'src/app/shared/api.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import {FormGroup, FormBuilder} from '@angular/forms'
+import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormBuilder} from '@angular/forms'
 import { ProductModel } from './product-detail.model';
 
 @Component({
@@ -68,11 +68,12 @@ export class ProductDetailComponent implements OnInit {
   deleteProduct(product: any){
     this.api.delete(product.id)
     .subscribe(res=>{
-      alert("Product Deletet");
+      alert("Product Deleted");
       this.getAllProducts();
     })
   }
 
+  // Editing the existing products on Update Button
   onEdit(product: any, content:any){
     this.showADD = false;
     this.showUpdate = true;
@@ -130,9 +131,5 @@ export class ProductDetailComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
-  }
-
-  closeForm(){
-    this.addProductForm.reset();
   }
 }
